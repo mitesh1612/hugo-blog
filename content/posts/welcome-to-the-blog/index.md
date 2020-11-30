@@ -19,4 +19,4 @@ I'm Mitesh Shah, and I live in Hyderabad. I started my journey as a Software Eng
 
 ## Technical Details for this Blog
 
-This blog is possible using Hugo with the PaperMod theme.
+This blog is possible using Hugo with the [PaperCSS theme](https://themes.gohugo.io/papercss-hugo-theme/).
