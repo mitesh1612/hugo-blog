@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+  <link rel="canonical" href="https://mitesh1612.github.io/hugo-blog/posts/constructing-complex-dictionary/">
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="https://mitesh1612.github.io/hugo-blog/css/paper.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://mitesh1612.github.io/hugo-blog/css/custom.css">
+
+  
+  
+  <title>Constructing a complex dictionary of base and derived class using the same code | Mitesh Shah&#39;s Blog</title>
+</head>
+  <body>
+    <div class="container paper">
+      <nav class="border split-nav">
+  <div class="nav-brand">
+    <h3><a href="/">Mitesh Shah&#39;s Blog</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+    <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+      
+        <li><a href="/hugo-blog/">Blog</a></li>
+      
+        <li><a href="/hugo-blog/tags/">Tags</a></li>
+      
+        <li><a href="/hugo-blog/about/">About</a></li>
+      
+        <li><a href="/hugo-blog/index.xml">RSS</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+      <main>
+        
+
+<h1>Constructing a complex dictionary of base and derived class using the same code</h1>
+<p><img src="hero.jpg" alt="Hero Image">
+Okay, really complex title aside, I&rsquo;ll try to explain the problem I had and the interesting way I found to solve it. This may not be the best or the most optimized way, but I really liked this solution and would like to share it.</p>
+<p>Also, although I do prefer Python, this post is in C#, since that was the language I encountered this problem in.</p>
+<p>So here is the problem. Say we have two C# Classes</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BaseClass</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> SomeProperties { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+}
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DerivedClass</span> : BaseClass
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> SomeOtherProperties { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+}
+</code></pre></div><p>I wanted to construct a Dictionary of these classes like <code>Dictionary&lt;string, BaseClass&gt;</code> and <code>Dictionary&lt;string, DerivedClass&gt;</code> at two very different places. The construction of each dictionary element was not that trivial due to the inherent complexity of filling the properties for both the classes. Here is an example of how one of the dictionaries was being created:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// For the base class
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> map = <span style="color:#66d9ef">new</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, BaseClass&gt;();
+<span style="color:#66d9ef">foreach</span>(<span style="color:#66d9ef">var</span> someProperty <span style="color:#66d9ef">in</span> someList)
+{
+    <span style="color:#66d9ef">var</span> baseElement = <span style="color:#66d9ef">new</span> BaseClass(someProperty);
+    map[someProperty] = baseElement;
+}
+
+<span style="color:#66d9ef">foreach</span>(<span style="color:#66d9ef">var</span> dependency <span style="color:#66d9ef">in</span> dependencyList)
+{
+    map[dependency.To] = map[dependency.From]
+}
+
+<span style="color:#75715e">// For the derived class
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> map = <span style="color:#66d9ef">new</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, DerivedClass&gt;();
+<span style="color:#66d9ef">foreach</span>(<span style="color:#66d9ef">var</span> someProperty <span style="color:#66d9ef">in</span> someList)
+{
+    <span style="color:#75715e">// someOtherProperty comes from somewhere else
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> derivedElement = <span style="color:#66d9ef">new</span> DerivedClass(someProperty, someOtherProperty);
+    map[someProperty] = derivedElement;
+}
+
+<span style="color:#66d9ef">foreach</span>(<span style="color:#66d9ef">var</span> dependency <span style="color:#66d9ef">in</span> dependencyList)
+{
+    map[dependency.To] = map[dependency.From]
+}
+</code></pre></div><p>As you can see, there is a lot of logic repeating since the properties that were created for the base class were also created for the derived class, but when we create the DerivedClass object, new properties were also to be added to those object. Both the objects differ in how they are constructed but the way the map is created is similar. I wanted a way to reuse these for loops instead of writing them for both <code>BaseClass</code> and <code>DerivedClass</code> and other classes that might inherit from <code>BaseClass</code> later.</p>
+<p>My basic idea was to use a Template method like this.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, &lt;T&gt;&gt; CreateDictionary(parameters)
+{
+    <span style="color:#66d9ef">while</span>(someConditionOnParameters)
+    {
+        <span style="color:#66d9ef">if</span>(T <span style="color:#66d9ef">is</span> BaseClass)
+        {
+            <span style="color:#75715e">// Base class object creation code
+</span><span style="color:#75715e"></span>        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(T <span style="color:#66d9ef">is</span> DerivedClass)
+        {
+            <span style="color:#75715e">// Derived class object creation code
+</span><span style="color:#75715e"></span>        }
+        <span style="color:#75715e">// repeated dictionary creation code
+</span><span style="color:#75715e"></span>    }
+}
+</code></pre></div><p>The other problem that I encounter here in was the arguments to this method. When we create the BaseClass object, I require fewer properties but when I created DerivedClass object, I require more properties and hence the number and type of arguments couldn&rsquo;t be fixed. Of course, I can set/pass them as <code>null</code> and ignore when not needed, but that didn&rsquo;t feel like a tidy solution to me. Plus later on, when we derive a new class from BaseClass, again the signature of method changes which might break a few things here and there.</p>
+<p>That&rsquo;s when I was suggested the interesting solution to this problem, the one I am going to share now. We keep one function that creates this dictionary but rather than passing the parameters to create the objects, we pass a function that creates those objects for us. For example when we want to create the BaseClass dictionary, we can pass a function that creates the base class object and so on. This way this method can be extensible for any classes that derive from future as well. Here is a dummy code to show how that method might look like</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, BaseClass&gt; CreateDictionary(DataObject requiredData, Func&lt;Data, BaseClass&gt; objectCreator)
+{
+    <span style="color:#66d9ef">var</span> map = <span style="color:#66d9ef">new</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, BaseClass&gt;();
+    <span style="color:#66d9ef">foreach</span>(Data propertyValues <span style="color:#66d9ef">in</span> requiredData.data)
+    {
+        <span style="color:#66d9ef">var</span> element = objectCreator(Data);
+    }
+    <span style="color:#66d9ef">foreach</span>(<span style="color:#66d9ef">var</span> dependency <span style="color:#66d9ef">in</span> requiredData.dependencies)
+    {
+        map[dependency.To] = dependency.From;
+    }
+}
+</code></pre></div><p>Now when I want to create the base class dictionary, I can call it like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">var</span> map = CreateDictionary(requiredData, x =&gt; 
+{
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> BaseClass(x.somePropertyValue);
+});
+</code></pre></div><p>Or if I want the derived class dictionary, like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">var</span> map = CreateDictionary(requiredData, x =&gt; 
+{
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> DerivedClass(x.SomePropertyValue, someOtherPropertyValue);
+});
+</code></pre></div><p>I really loved this solution, its nifty and useful and this didnt come to my mind easily.</p>
+<h3 id="closing-thoughts">Closing Thoughts</h3>
+<p>I know this is a really specific and weird problem to encounter, and some constraints of why this solution was used over other ways are not clear from the vague names and class designs (and possibly incomplete details) I provided. However, I really found the solution interesting and felt like sharing it.</p>
+<p>You can always share your thoughts on this by @&lsquo;ing me on Twitter or LinkedIn (links are available in my author bio) or even this blog&rsquo;s <a href="http://github.com/mitesh1612/hugo-blog">GitHub repo</a>.</p>
+
+  
+
+      </main>
+      
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  </div>
+  </body>
+</html>

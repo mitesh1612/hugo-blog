@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>first on Mitesh Shah&#39;s Blog</title>
+    <link>https://mitesh1612.github.io/hugo-blog/tags/first/</link>
+    <description>Recent content in first on Mitesh Shah&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mitesh1612.github.io/hugo-blog/tags/first/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to this Blog</title>
+      <link>https://mitesh1612.github.io/hugo-blog/posts/welcome-to-the-blog/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mitesh1612.github.io/hugo-blog/posts/welcome-to-the-blog/</guid>
+      <description>Hey everyone, welcome to my blog. I finally took the leap and set up my blog, and after a lot of thinking, I finally decided to create a blog.
+Why a blog? Well among a lot of other reasons, like not forgetting what I learn from time to time, and to keep track of my journey as a Software Development Engineer. The other huge reason is that I love to learn new things, research the ones I find interesting, and I plan to document and share my learnings via blog posts, which can be easily found and referred to later as well.</description>
+    </item>
+    
+  </channel>
+</rss>
