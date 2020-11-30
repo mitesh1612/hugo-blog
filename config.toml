@@ -15,7 +15,7 @@ googleAnalytics = "UA-123456789-1"
   quality = 99
 
 [params]
-  homeMetaContent = "A Hugo theme made with PaperCSS, the less formal CSS framework."
+  homeMetaContent = "The developer blog of Mitesh Shah"
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat = "Jan 2, 2006"
 

@@ -1,6 +1,6 @@
 ---
 title: "Welcome to this Blog"
-date: 2020-11-30T16:08:10+05:30
+date: 2020-08-12
 tags: ["welcome","first"]
 author: "Mitesh Shah"
 draft: false
