@@ -1,4 +1,4 @@
-baseURL = "https://mitesh1612.github.io/"
+baseURL = "https://mitesh1612.github.io/hugo-blog"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Mitesh Shah's Blog"
