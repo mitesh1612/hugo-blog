@@ -4,11 +4,8 @@ date: 2020-11-30T16:08:10+05:30
 tags: ["welcome","first"]
 author: "Mitesh Shah"
 draft: false
-cover:
-    image: images/welcome.png
-    alt: "Welcome Image"
 ---
-## Welcome to this blog
+![Welcome Image](welcome.jpg)
 
 Hey everyone, welcome to my blog. I finally took the leap and set up my blog, and after a lot of thinking, I finally decided to create a blog.
 
