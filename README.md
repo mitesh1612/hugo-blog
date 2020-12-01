@@ -2,7 +2,7 @@
 
 Hey there, this is my personal blog setup using Hugo Static Site Generator with the PaperCSS theme
 
-To add posts to this blog, just add your posts in `content` -> `posts` -> `title` with the appropriate metadata. This repo also has a CI built in it which builds and deploys the blog to http://mitesh1612.github.io/blog
+To add posts to this blog, just add your posts in `content` -> `posts` -> `title` with the appropriate metadata. This repo also has a CI built in it which builds and deploys the blog to http://mitesh1612.github.io/hugo-blog
 
 ## See the live blog
 
