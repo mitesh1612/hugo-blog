@@ -17,6 +17,7 @@ googleAnalytics = "UA-123456789-1"
 [params]
   homeMetaContent = "The developer blog of Mitesh Shah"
   dateFormat = "Jan 2, 2006"
+  navTitleLink = "/hugo-blog"
 
 [menu]
   [[menu.nav]]
