@@ -1,42 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>c# on Mitesh Shah&#39;s Blog</title>
-    <link>https://mitesh1612.github.io/hugo-blog/tags/c#/</link>
-    <description>Recent content in c# on Mitesh Shah&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 27 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mitesh1612.github.io/hugo-blog/tags/c#/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The different kinds of Unit Tests</title>
-      <link>https://mitesh1612.github.io/hugo-blog/posts/different-types-of-uts/</link>
-      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://mitesh1612.github.io/hugo-blog/posts/different-types-of-uts/</guid>
-      <description>In my previous post, I talked about various kinds of Tests. As a developer working for a mature codebase, the most common tests that you will need to write are Unit Tests, and its a good practice tbh.
-While working on my team&amp;rsquo;s project (which was in a fairly early stage), I saw various kinds of Unit Tests and researched a bit myself on how to write some good UTs. Today I plan to share the same in this post.</description>
-    </item>
-    
-    <item>
-      <title>C# Properties and their different Uses</title>
-      <link>https://mitesh1612.github.io/hugo-blog/posts/c-sharp-properties/</link>
-      <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://mitesh1612.github.io/hugo-blog/posts/c-sharp-properties/</guid>
-      <description>I learnt C# in parts from various resources, mostly because each one had their different starting points. One book heavily relied on using Visual Studio which definitely makes life easy, but makes you ignore the nitties-gritties of setting up .NET projects, while one did everything from scratch, which did scratch my itch (Get it? 😜) but had a really really slow pace.
-One constructs that I learnt about while seeing how to create classes was C# Properties.</description>
-    </item>
-    
-    <item>
-      <title>Constructing a complex dictionary of base and derived class using the same code</title>
-      <link>https://mitesh1612.github.io/hugo-blog/posts/constructing-complex-dictionary/</link>
-      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://mitesh1612.github.io/hugo-blog/posts/constructing-complex-dictionary/</guid>
-      <description>Okay, really complex title aside, I&amp;rsquo;ll try to explain the problem I had and the interesting way I found to solve it. This may not be the best or the most optimized way, but I really liked this solution and would like to share it.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>c# on Mitesh Shah's Blog</title><link>https://mitesh1612.github.io/hugo-blog/tags/c#/</link><description>Recent content in c# on Mitesh Shah's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 27 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mitesh1612.github.io/hugo-blog/tags/c#/index.xml" rel="self" type="application/rss+xml"/><item><title>The different kinds of Unit Tests</title><link>https://mitesh1612.github.io/hugo-blog/posts/different-types-of-uts/</link><pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate><guid>https://mitesh1612.github.io/hugo-blog/posts/different-types-of-uts/</guid><description>In my previous post, I talked about various kinds of Tests. As a developer working for a mature codebase, the most common tests that you will need to write are Unit Tests, and its a good practice tbh.
+While working on my team&amp;rsquo;s project (which was in a fairly early stage), I saw various kinds of Unit Tests and researched a bit myself on how to write some good UTs. Today I plan to share the same in this post.</description></item><item><title>C# Properties and their different Uses</title><link>https://mitesh1612.github.io/hugo-blog/posts/c-sharp-properties/</link><pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate><guid>https://mitesh1612.github.io/hugo-blog/posts/c-sharp-properties/</guid><description>I learnt C# in parts from various resources, mostly because each one had their different starting points. One book heavily relied on using Visual Studio which definitely makes life easy, but makes you ignore the nitties-gritties of setting up .NET projects, while one did everything from scratch, which did scratch my itch (Get it? 😜) but had a really really slow pace.
+One constructs that I learnt about while seeing how to create classes was C# Properties.</description></item><item><title>Constructing a complex dictionary of base and derived class using the same code</title><link>https://mitesh1612.github.io/hugo-blog/posts/constructing-complex-dictionary/</link><pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate><guid>https://mitesh1612.github.io/hugo-blog/posts/constructing-complex-dictionary/</guid><description>Okay, really complex title aside, I&amp;rsquo;ll try to explain the problem I had and the interesting way I found to solve it. This may not be the best or the most optimized way, but I really liked this solution and would like to share it.
 Also, although I do prefer Python, this post is in C#, since that was the language I encountered this problem in.
-So here is the problem.</description>
-    </item>
-    
-  </channel>
-</rss>
+So here is the problem.</description></item></channel></rss>

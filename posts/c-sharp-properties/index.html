@@ -1,225 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <meta name="generator" content="Hugo 0.79.0" />
-  <link rel="canonical" href="https://mitesh1612.github.io/hugo-blog/posts/c-sharp-properties/">
-
-  
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#ffffff">
-
-  <link rel="stylesheet" type="text/css" href="https://mitesh1612.github.io/hugo-blog/css/paper.css">
-
-  
-  
-  <link rel="stylesheet" type="text/css" href="https://mitesh1612.github.io/hugo-blog/css/custom.css">
-
-  
-  
-  <title>C# Properties and their different Uses | Mitesh Shah&#39;s Blog</title>
-</head>
-  <body>
-    <div class="container paper">
-      <nav class="border split-nav">
-  <div class="nav-brand">
-    <h3><a href="/">Mitesh Shah&#39;s Blog</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-    <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-      
-        <li><a href="/hugo-blog/">Blog</a></li>
-      
-        <li><a href="/hugo-blog/tags/">Tags</a></li>
-      
-        <li><a href="/hugo-blog/about/">About</a></li>
-      
-        <li><a href="/hugo-blog/index.xml">RSS</a></li>
-      
-      </ul>
-    </div>
-  </div>
-</nav>
-      <main>
-        
-
-<h1>C# Properties and their different Uses</h1>
-<p><img src="hero.png" alt="Hero image"></p>
-<p>I learnt C# in parts from various resources, mostly because each one had their different starting points. One book heavily relied on using Visual Studio which definitely makes life easy, but makes you ignore the nitties-gritties of setting up .NET projects, while one did everything from scratch, which did scratch my itch (<em>Get it?</em> 😜) but had a really really slow pace.</p>
-<p>One constructs that I learnt about while seeing how to create classes was C# Properties. Properties have a little confusing syntax as described here (in all the non syntax highlighted glory of C#)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyRiches</span>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=generator content="Hugo 0.79.0"><link rel=canonical href=https://mitesh1612.github.io/hugo-blog/posts/c-sharp-properties/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#000000><meta name=msapplication-TileColor content="#ffffff"><meta name=theme-color content="#ffffff"><link rel=stylesheet type=text/css href=https://mitesh1612.github.io/hugo-blog/css/paper.css><link rel=stylesheet type=text/css href=https://mitesh1612.github.io/hugo-blog/css/custom.css><title>C# Properties and their different Uses | Mitesh Shah's Blog</title></head><body><div class="container paper"><nav class="border split-nav"><div class=nav-brand><h3><a href=/>Mitesh Shah's Blog</a></h3></div><div class=collapsible><input id=collapsible1 type=checkbox name=collapsible1>
+<button>
+<label for=collapsible1><div class=bar1></div><div class=bar2></div><div class=bar3></div></label></button><div class=collapsible-body><ul class=inline><li><a href=/hugo-blog/>Blog</a></li><li><a href=/hugo-blog/tags/>Tags</a></li><li><a href=/hugo-blog/about/>About</a></li><li><a href=/hugo-blog/index.xml>RSS</a></li></ul></div></div></nav><main><h1>C# Properties and their different Uses</h1><p><img src=hero.png alt="Hero image"></p><p>I learnt C# in parts from various resources, mostly because each one had their different starting points. One book heavily relied on using Visual Studio which definitely makes life easy, but makes you ignore the nitties-gritties of setting up .NET projects, while one did everything from scratch, which did scratch my itch (<em>Get it?</em> 😜) but had a really really slow pace.</p><p>One constructs that I learnt about while seeing how to create classes was C# Properties. Properties have a little confusing syntax as described here (in all the non syntax highlighted glory of C#)</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MyRiches</span>
 {
-    <span style="color:#75715e">// Normal Data Members
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Money;
-    <span style="color:#75715e">// Properties
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> GoldInKgs { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style=color:#75715e>// Normal Data Members
+</span><span style=color:#75715e></span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> Money;
+    <span style=color:#75715e>// Properties
+</span><span style=color:#75715e></span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> GoldInKgs { <span style=color:#66d9ef>get</span>; <span style=color:#66d9ef>set</span>; }
 }
 </code></pre></div><p>If you come from some other language, upon seeing this, you might be like
-<img src="meme1.png" alt="A meme on properties"></p>
-<p>When I learnt about properties, I kept wondering why do I work extra hard to define data members when I can do it in a simpler and a much known way. I though it was just <a href="https://en.wikipedia.org/wiki/Syntactic_sugar">syntactic sugar</a>, only with its visible diabetes as well. Then I saw an interesting usage of properties in our existing codebase, something like this</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>
+<img src=meme1.png alt="A meme on properties"></p><p>When I learnt about properties, I kept wondering why do I work extra hard to define data members when I can do it in a simpler and a much known way. I though it was just <a href=https://en.wikipedia.org/wiki/Syntactic_sugar>syntactic sugar</a>, only with its visible diabetes as well. Then I saw an interesting usage of properties in our existing codebase, something like this</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MyClass</span>
 {
-    <span style="color:#66d9ef">public</span> IList&lt;SomeType&gt; Property
+    <span style=color:#66d9ef>public</span> IList&lt;SomeType&gt; Property
     {
-        <span style="color:#66d9ef">get</span>
+        <span style=color:#66d9ef>get</span>
         {
-            <span style="color:#66d9ef">if</span>(m_property == <span style="color:#66d9ef">null</span>)
+            <span style=color:#66d9ef>if</span>(m_property == <span style=color:#66d9ef>null</span>)
             {
-                m_property = <span style="color:#66d9ef">new</span> List&lt;SomeType&gt;();
+                m_property = <span style=color:#66d9ef>new</span> List&lt;SomeType&gt;();
             }
-            <span style="color:#66d9ef">return</span> m_property;
+            <span style=color:#66d9ef>return</span> m_property;
         }
-        <span style="color:#66d9ef">set</span>
+        <span style=color:#66d9ef>set</span>
         {
-            m_property = <span style="color:#66d9ef">value</span>;
+            m_property = <span style=color:#66d9ef>value</span>;
         }
     }
-    <span style="color:#66d9ef">private</span> IList&lt;SomeType&gt; m_property;
+    <span style=color:#66d9ef>private</span> IList&lt;SomeType&gt; m_property;
 }
-</code></pre></div><p>and I suddenly doubting my already dubious C# knowledge. Thus I began a journey on to understand the actual use and various usage of patterns. (Don&rsquo;t worry, I will also explain this example soon)</p>
-<h2 id="so-what-actually-are-properties">So what actually are Properties?</h2>
-<p>Before getting into why these exist, lets assume they didnt. Now say I had a data member in my class that was private but I needed to access it&rsquo;s value in some other class, but not let it modify the value. For example</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bank</span>
+</code></pre></div><p>and I suddenly doubting my already dubious C# knowledge. Thus I began a journey on to understand the actual use and various usage of patterns. (Don&rsquo;t worry, I will also explain this example soon)</p><h2 id=so-what-actually-are-properties>So what actually are Properties?</h2><p>Before getting into why these exist, lets assume they didnt. Now say I had a data member in my class that was private but I needed to access it&rsquo;s value in some other class, but not let it modify the value. For example</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Bank</span>
 {
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> AccountBalance;
+    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>int</span> AccountBalance;
 }
 
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Me</span>
+<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Me</span>
 {
-    <span style="color:#66d9ef">var</span> myBankAccount = <span style="color:#66d9ef">new</span> Bank();
-    <span style="color:#66d9ef">var</span> myMoney = myBankAccount.AccountBalance;
+    <span style=color:#66d9ef>var</span> myBankAccount = <span style=color:#66d9ef>new</span> Bank();
+    <span style=color:#66d9ef>var</span> myMoney = myBankAccount.AccountBalance;
 }
-</code></pre></div><p>Now if I cant directly access the <code>AccountBalance</code> property. If I make it public, although it might be fun for me, it might not be fun for the bank, when I could just do this</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// The easy way of becoming a millionaire
-</span><span style="color:#75715e"></span>myBankAccount.AccountBalance = <span style="color:#ae81ff">1000000</span>;
-</code></pre></div><p>So what is the other solution? Ah yes, <strong>getters</strong> (and <strong>setters</strong>, their siblings). We could easily define a getter on this data member that will get us the value but not let modify it. Something like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bank</span>
+</code></pre></div><p>Now if I cant directly access the <code>AccountBalance</code> property. If I make it public, although it might be fun for me, it might not be fun for the bank, when I could just do this</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#75715e>// The easy way of becoming a millionaire
+</span><span style=color:#75715e></span>myBankAccount.AccountBalance = <span style=color:#ae81ff>1000000</span>;
+</code></pre></div><p>So what is the other solution? Ah yes, <strong>getters</strong> (and <strong>setters</strong>, their siblings). We could easily define a getter on this data member that will get us the value but not let modify it. Something like this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Bank</span>
 {
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> AccountBalance;
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> getAccountBalance()
+    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>int</span> AccountBalance;
+    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> getAccountBalance()
     {
-        <span style="color:#66d9ef">return</span> AccountBalance;
+        <span style=color:#66d9ef>return</span> AccountBalance;
     }
 }
 
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Me</span>
+<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Me</span>
 {
-    <span style="color:#66d9ef">var</span> myBankAccount = <span style="color:#66d9ef">new</span> Bank();
-    <span style="color:#66d9ef">var</span> myMoney = myBankAccount.getAccountBalance();
+    <span style=color:#66d9ef>var</span> myBankAccount = <span style=color:#66d9ef>new</span> Bank();
+    <span style=color:#66d9ef>var</span> myMoney = myBankAccount.getAccountBalance();
 }
-</code></pre></div><p>If you are used to working in Java with Eclipse, you know it has a functionality of auto generating getters and setters and I&rsquo;m partly sure the creators of C# might have already loaded this in Visual Studio, but for people who didnt use it, this was a long and tedious methods to write this getters and setters. That&rsquo;s why, C# creators created properties.</p>
-<blockquote>
-<p>Properties provide an access mechanism for private data members</p>
-</blockquote>
-<p>So even though you can essentially create data members using properties, that&rsquo;s not their intended use. Essentially Properties provide a flexible mechanism to read, write or compute the value of a private field. They can be used as data members, but they are actually special methods called <strong>accessors</strong>, which as you guessed it, are useful for accessing data.</p>
-<p>If you are not a fan of big words, this basically means, they are a shortcut for writing customized getter and setter methods. Thus, in a way, they indeed are syntactic sugar, without the harms? I am not going to bore you with the syntax of C# Properties, here is a good <a href="https://www.geeksforgeeks.org/c-sharp-properties/">reference</a>.</p>
-<p>Now comes the fun part, the various usage patterns of Properties. The <code>get</code> and <code>set</code> aren&rsquo;t just for show. You can customize them to implement various fun and useful patterns in your code, and here I&rsquo;ll show a few</p>
-<h3 id="lazy-loading-values-using-properties">Lazy Loading Values using Properties</h3>
-<p>Properties can help you implement a cache with lazy loading feature. For example</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> m_IncomeTax;
+</code></pre></div><p>If you are used to working in Java with Eclipse, you know it has a functionality of auto generating getters and setters and I&rsquo;m partly sure the creators of C# might have already loaded this in Visual Studio, but for people who didnt use it, this was a long and tedious methods to write this getters and setters. That&rsquo;s why, C# creators created properties.</p><blockquote><p>Properties provide an access mechanism for private data members</p></blockquote><p>So even though you can essentially create data members using properties, that&rsquo;s not their intended use. Essentially Properties provide a flexible mechanism to read, write or compute the value of a private field. They can be used as data members, but they are actually special methods called <strong>accessors</strong>, which as you guessed it, are useful for accessing data.</p><p>If you are not a fan of big words, this basically means, they are a shortcut for writing customized getter and setter methods. Thus, in a way, they indeed are syntactic sugar, without the harms? I am not going to bore you with the syntax of C# Properties, here is a good <a href=https://www.geeksforgeeks.org/c-sharp-properties/>reference</a>.</p><p>Now comes the fun part, the various usage patterns of Properties. The <code>get</code> and <code>set</code> aren&rsquo;t just for show. You can customize them to implement various fun and useful patterns in your code, and here I&rsquo;ll show a few</p><h3 id=lazy-loading-values-using-properties>Lazy Loading Values using Properties</h3><p>Properties can help you implement a cache with lazy loading feature. For example</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>int</span> m_IncomeTax;
 
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> IncomeTax
+<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> IncomeTax
 {
-    <span style="color:#66d9ef">get</span>
+    <span style=color:#66d9ef>get</span>
     {
-        <span style="color:#66d9ef">if</span>(m_IncomeTax == <span style="color:#66d9ef">null</span>)
+        <span style=color:#66d9ef>if</span>(m_IncomeTax == <span style=color:#66d9ef>null</span>)
         {
             m_IncomeTax = AReallyLongComputationForTax();
         }
-        <span style="color:#66d9ef">return</span> m_IncomeTax;
+        <span style=color:#66d9ef>return</span> m_IncomeTax;
     }
 }
-</code></pre></div><p>This is the other primary usage of Properties, of course other than controlling access.</p>
-<h3 id="future-proofing-code">Future Proofing Code</h3>
-<p>Say you want to maintain the API of your class but the logic or calculation changes. To incorporate that without affecting your class API, you can change the setter code.</p>
-<p>In terms of the above example, say in the computation for tax, they include a cess (YES! Tax on Tax!), you can change the getters like this, such that <code>IncomeTax</code> property gives you the total tax always.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// Old
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> IncomeTax
+</code></pre></div><p>This is the other primary usage of Properties, of course other than controlling access.</p><h3 id=future-proofing-code>Future Proofing Code</h3><p>Say you want to maintain the API of your class but the logic or calculation changes. To incorporate that without affecting your class API, you can change the setter code.</p><p>In terms of the above example, say in the computation for tax, they include a cess (YES! Tax on Tax!), you can change the getters like this, such that <code>IncomeTax</code> property gives you the total tax always.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#75715e>// Old
+</span><span style=color:#75715e></span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> IncomeTax
 {
-    <span style="color:#66d9ef">get</span>
+    <span style=color:#66d9ef>get</span>
     {
-        <span style="color:#66d9ef">return</span> m_IncomeTax;
+        <span style=color:#66d9ef>return</span> m_IncomeTax;
     }
 }
 
-<span style="color:#75715e">// New
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> IncomeTax
+<span style=color:#75715e>// New
+</span><span style=color:#75715e></span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> IncomeTax
 {
-    <span style="color:#66d9ef">get</span>
+    <span style=color:#66d9ef>get</span>
     {
-        <span style="color:#66d9ef">return</span> m_IncomeTax + Cess;
+        <span style=color:#66d9ef>return</span> m_IncomeTax + Cess;
     }
 }
-</code></pre></div><h3 id="creating-a-contract">Creating a Contract</h3>
-<p>Properties help you create a contract/API for a class. This way you can have a proper contract of accessing class members, which might be private or calculations on some private members. They are useful if you need some extra calculations on private members.</p>
-<p>In general, the point is to separate <em>implementation</em> (the field) from <em>API</em> (the property). Later on you can, should you wish, put logic, logging etc in the property without breaking either source or binary compatibility - but more importantly you&rsquo;re saying what your type is willing to do, rather than how it&rsquo;s going to do it. More on this in <a href="https://csharpindepth.com/Articles/PropertiesMatter">this article</a></p>
-<h3 id="returning-non-null-values-using-properties">Returning Non Null Values using Properties</h3>
-<p>I promised I&rsquo;ll explain the code at the beginning of the section. For reference, this is the code</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>
+</code></pre></div><h3 id=creating-a-contract>Creating a Contract</h3><p>Properties help you create a contract/API for a class. This way you can have a proper contract of accessing class members, which might be private or calculations on some private members. They are useful if you need some extra calculations on private members.</p><p>In general, the point is to separate <em>implementation</em> (the field) from <em>API</em> (the property). Later on you can, should you wish, put logic, logging etc in the property without breaking either source or binary compatibility - but more importantly you&rsquo;re saying what your type is willing to do, rather than how it&rsquo;s going to do it. More on this in <a href=https://csharpindepth.com/Articles/PropertiesMatter>this article</a></p><h3 id=returning-non-null-values-using-properties>Returning Non Null Values using Properties</h3><p>I promised I&rsquo;ll explain the code at the beginning of the section. For reference, this is the code</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MyClass</span>
 {
-    <span style="color:#66d9ef">public</span> IList&lt;SomeType&gt; Property
+    <span style=color:#66d9ef>public</span> IList&lt;SomeType&gt; Property
     {
-        <span style="color:#66d9ef">get</span>
+        <span style=color:#66d9ef>get</span>
         {
-            <span style="color:#66d9ef">if</span>(m_property == <span style="color:#66d9ef">null</span>)
+            <span style=color:#66d9ef>if</span>(m_property == <span style=color:#66d9ef>null</span>)
             {
-                m_property = <span style="color:#66d9ef">new</span> List&lt;SomeType&gt;();
+                m_property = <span style=color:#66d9ef>new</span> List&lt;SomeType&gt;();
             }
-            <span style="color:#66d9ef">return</span> m_property;
+            <span style=color:#66d9ef>return</span> m_property;
         }
-        <span style="color:#66d9ef">set</span>
+        <span style=color:#66d9ef>set</span>
         {
-            m_property = <span style="color:#66d9ef">value</span>;
+            m_property = <span style=color:#66d9ef>value</span>;
         }
     }
 
-    <span style="color:#66d9ef">private</span> IList&lt;SomeType&gt; m_property;
+    <span style=color:#66d9ef>private</span> IList&lt;SomeType&gt; m_property;
 }
-</code></pre></div><p>This code essentially checks whether a given member is null, and if it is null, it will populate the value first, and then return it. There is one great benefit of using this approach. Anything that consumes the value of this property need not have a null check, since this essentially ensures that you never get a null value and reduces the amount of code and checks you need to write, and don&rsquo;t we all want to write less code?</p>
-<p>In closing, I know properties seem like glorified setters/getters and all of the benefits mentioned above can also be done using setters and getters as well, as said above, they are just syntactic sugar. Learning how they can be used to control access rather than being used as public data members can help flesh out some nice code as well.</p>
-<h2 id="an-honourable-typescript-mention">An honourable TypeScript Mention</h2>
-<p>Typescript itself has a similar method of implementing getters on private variables, which I remembered when I was reading up on properties. This looks quite similar to the C# Properties implementation and hence the mention here.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
-    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_property</span>;
-    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">property</span>() {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">_property</span>;
+</code></pre></div><p>This code essentially checks whether a given member is null, and if it is null, it will populate the value first, and then return it. There is one great benefit of using this approach. Anything that consumes the value of this property need not have a null check, since this essentially ensures that you never get a null value and reduces the amount of code and checks you need to write, and don&rsquo;t we all want to write less code?</p><p>In closing, I know properties seem like glorified setters/getters and all of the benefits mentioned above can also be done using setters and getters as well, as said above, they are just syntactic sugar. Learning how they can be used to control access rather than being used as public data members can help flesh out some nice code as well.</p><h2 id=an-honourable-typescript-mention>An honourable TypeScript Mention</h2><p>Typescript itself has a similar method of implementing getters on private variables, which I remembered when I was reading up on properties. This looks quite similar to the C# Properties implementation and hence the mention here.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MyClass</span> {
+    <span style=color:#66d9ef>private</span> <span style=color:#a6e22e>_property</span>;
+    <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>get</span> <span style=color:#a6e22e>property</span>() {
+        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>_property</span>;
     }
 }
 
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyClass</span>();
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">property</span>;
-</code></pre></div>
-  
-
-      </main>
-      
-  
-  <script>
-  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-  ga('create', 'UA-123456789-1', 'auto');
-  ga('send', 'pageview');
-  </script>
-  <script async src='https://www.google-analytics.com/analytics.js'></script>
-  
-
-  </div>
-  </body>
-</html>
+<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>data</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>MyClass</span>();
+<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>value</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>data</span>.<span style=color:#a6e22e>property</span>;
+</code></pre></div></main><script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-123456789-1','auto');ga('send','pageview');</script><script async src=https://www.google-analytics.com/analytics.js></script></div></body></html>
