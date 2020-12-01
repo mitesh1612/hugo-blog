@@ -16,7 +16,6 @@ googleAnalytics = "UA-123456789-1"
 
 [params]
   homeMetaContent = "The developer blog of Mitesh Shah"
-  # For more date formats see https://gohugo.io/functions/format/
   dateFormat = "Jan 2, 2006"
 
 [menu]

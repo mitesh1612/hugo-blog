@@ -8,7 +8,7 @@ draft: false
 
 ![Hero Image](hero.png)
 
-In my [previous post](../primer-on-tests/), I talked about various kinds of Tests. As a developer working for a mature codebase, the most common tests that you will need to write are Unit Tests, and its a good practice tbh.
+In my [previous post](https://mitesh1612.github.io/hugo-blog/posts/primer-on-tests/), I talked about various kinds of Tests. As a developer working for a mature codebase, the most common tests that you will need to write are Unit Tests, and its a good practice tbh.
 
 While working on my team's project (which was in a fairly early stage), I saw various kinds of Unit Tests and researched a bit myself on how to write some good UTs. Today I plan to share the same in this post. I'll talk about various types of Unit Tests and when you might want to use each.
 
